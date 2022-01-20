@@ -3,7 +3,7 @@ node{
  
    stage('SetEnv') { 
       git 'https://github.com/sandeep22y/Snykscriptbasedintegration.git'
-      mvnHome = tool 'MAVEN_HOME'
+      mvnHome = tool 'MVN_HOME'
 	   
    }
    
