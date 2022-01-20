@@ -3,13 +3,13 @@ node{
  
    stage('SetEnv') { 
       git 'https://github.com/sandeep22y/Snykscriptbasedintegration.git'
-      mvnHome = tool 'Maven home'
+      mvnHome = tool 'MAVEN_HOME'
 	   
    }
    
    stage('CompileandPackage') {
-      withEnv(["Maven home=$mvnHome"]) {
-            sh(/"%Maven home%\usr\share\maven" -Dmaven.test.failure.ignore clean compile/)
+      withEnv(["MAVEN_HOME=$mvnHome"]) {
+            sh(/"%MAVEN_HOME%/opt/maven" -Dmaven.test.failure.ignore clean compile/)
          }
       
    }
