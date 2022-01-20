@@ -2,14 +2,14 @@ node{
     def mvnHome
  
    stage('SetEnv') { 
-      git 'https://github.com/cltalam/Snykscriptbasedintegration.git'
+      git 'https://github.com/sandeep22y/Snykscriptbasedintegration.git'
       mvnHome = tool 'MAVEN_HOME'
 	   
    }
    
    stage('CompileandPackage') {
       withEnv(["MVN_HOME=$mvnHome"]) {
-            bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
+            sh(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
          }
       
    }
