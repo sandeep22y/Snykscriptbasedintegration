@@ -9,7 +9,7 @@ node{
    
    stage('CompileandPackage') {
       withEnv(["MVN_HOME=$mvnHome"]) {
-            sh(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
+            sh(/"%MVN_HOME%/usr/share/maven" -Dmaven.test.failure.ignore clean compile/)
          }
       
    }
